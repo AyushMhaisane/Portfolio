@@ -1,0 +1,87 @@
+:root {
+    --bg-dark-primary: #222831; 	
+    --bg-dark-secondary: #393e46; 
+    --accent-color: #00ADB5; 	 	
+    --text-light: #EEEEEE; 	 	 
+    --heading-color: #393e46; 
+}
+
+.education {
+    padding: 100px 0px;
+    margin: 50px auto; 
+    max-width: 1200px;
+    width: 90%;
+    background-color: rgba(128, 128, 128, 0.101);
+    border-radius: 10px;
+}
+
+.education hr {
+    border-top: 2px solid var(--accent-color); 
+    width: 400px;
+    margin: 10px auto;
+}
+
+.education h2 {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.education .vertical-timeline-element-title {
+    color: var(--accent-color);
+}
+
+.education .vertical-timeline-element-subtitle {
+    color: var(--heading-color); 
+}
+
+.ad-btn {
+    text-transform: uppercase;
+    width: 150px;
+    cursor: pointer;
+    height: 40px;
+    display: block;
+    text-align: center;
+    background-color: var(--accent-color); 
+    color: white;
+    border-radius: 80px;
+    font-size: 16px;
+    line-height: 35px;
+    text-decoration: none;
+    margin: 20px auto 20px auto;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s ease;
+    padding-top: 2px; 
+}
+
+.ad-btn:hover {
+    background-color: #008D95; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 173, 181, 0.5);
+}
+
+#dark .education {
+    background-color: rgba(255, 255, 255, 0.05); 
+}
+
+#dark .vertical-timeline-element-content p,
+#dark .vertical-timeline-element-content .vertical-timeline-element-subtitle,
+#dark .vertical-timeline-element-content h4,
+#dark .vertical-timeline-element-content strong {
+    color: var(--text-light) !important; 
+}
+
+@media (max-width: 600px) {
+    .education {
+        margin: 0;
+        padding: 0;
+        margin-top: 30px;
+    }
+    .education h2 {
+        padding-top: 20px;
+    }
+    .education hr {
+        width: 280px;
+        margin-bottom: 10px;
+    }
+}

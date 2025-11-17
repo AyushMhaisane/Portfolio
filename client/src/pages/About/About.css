@@ -1,0 +1,146 @@
+:root {
+    --bg-dark-primary: #222831; 	
+    --text-light: #EEEEEE; 	 	 
+    --accent-color: #00ADB5; 	 	
+    --shadow-color: rgba(0, 0, 0, 0.4); 
+    --bg-dark-secondary: #393e46; 
+}
+
+.about {
+    margin: 40px auto; 	
+    max-width: 1200px; 	
+    width: 90%; 	 	 
+    
+    padding: 40px 20px; 
+    
+    border-radius: 8px; 
+    color: #393e46; 
+}
+
+.about h2 {
+    font-weight: bold;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.about-hr {
+    border-top: 2px solid var(--accent-color);
+    width: 300px; 
+    margin: 10px auto 30px auto; 
+}
+
+
+.about-img {
+    width: 100%; 
+    max-width: 500px; 
+    text-align: center;
+    margin-bottom: 15px; 
+}
+
+.image-caption-name {
+    color: var(--accent-color); 
+    font-size: 1.5rem; 
+    font-weight: 600;
+    margin-top: 15px; 
+    
+    text-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
+}
+
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-left: 45px; 
+}
+
+.about-content p {
+    text-align: left; 
+    padding: 0; 
+    line-height: 1.6;
+}
+
+.about-highlights {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    width: 100%;
+    margin-top: 25px; 
+}
+
+.highlight-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-dark-secondary);
+    border: 1px solid #4a515c; 
+    border-radius: 8px;
+    padding: 10px 15px;
+    flex-grow: 1; 
+    transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.3); 
+}
+
+.highlight-icon {
+    color: var(--accent-color);
+    font-size: 26px;
+    margin-right: 12px;
+}
+
+.highlight-text h5 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #a8a8a8; 
+    font-weight: 400;
+}
+
+.highlight-text span {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+#dark .about {
+    background-color: rgba(255, 255, 255, 0.05); 
+    color: var(--text-light); 
+}
+
+#dark .about-img img {
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 173, 181, 0.4); 
+}
+
+@media (max-width: 992px) {
+    .about {
+        width: 90%; 
+        margin: 20px auto;
+        padding: 15px; 
+    }
+
+    .about-img {
+        margin-bottom: 20px;
+    }
+
+    .about-content {
+        align-items: center; 
+        padding-left: 0; 
+        text-align: center;
+    }
+    
+    .about-content p {
+        text-align: center; 
+    }
+
+    .about-highlights {
+        flex-direction: column; 
+        width: 100%;
+    }
+    .highlight-card {
+        justify-content: center; 
+    }
+}

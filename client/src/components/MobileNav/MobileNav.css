@@ -1,0 +1,106 @@
+/*
+  MOBILE-NAV.CSS - UPDATED
+  Colors ko naye dark/cyan theme se match kiya gaya hai.
+*/
+:root {
+    --bg-dark-primary: #222831;   
+    --bg-dark-secondary: #393e46; 
+    --accent-color: #00ADB5;     
+    --text-light: #EEEEEE;       
+}
+
+.mobile-nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001; /* Sidebar (1000) ke upar dikhna chahiye */
+}
+
+.mobile-nav-header {
+  height: 50px;
+  width: 100%;
+  /* MODIFICATION: Color ko sidebar jaisa banaya */
+  background-color: var(--bg-dark-secondary); 
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-header .mobile-nav-icon {
+  /* MODIFICATION: Color ko light text banaya */
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.mobile-nav-title {
+  margin-left: 20px;
+  /* MODIFICATION: Color ko accent banaya */
+  color: var(--accent-color); 
+  font-weight: bold;
+  text-transform: capitalize;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.mobile-nav-menu .nav-items {
+  height: auto;
+  width: 100%; /* MODIFICATION: 200px se 100% kiya */
+  /* MODIFICATION: Color ko sidebar jaisa banaya */
+  background-color: var(--bg-dark-secondary); 
+  padding: 10px;
+  padding-bottom: 20px;
+  /* MODIFICATION: Top ki radius hata di */
+  /* border-bottom-right-radius: 10px; */
+}
+
+/* MODIFICATION: Link styling add ki (Menus.css jaisi) */
+.mobile-nav-menu .nav-link a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.mobile-nav-menu .nav-link svg {
+  margin-right: 15px;
+  font-size: 22px;
+}
+
+.mobile-nav-menu .nav-link a:hover {
+  color: var(--accent-color);
+  background-color: rgba(0, 173, 181, 0.1);
+}
+
+/* Active link ke liye */
+.mobile-nav-menu .nav-link a.active {
+  color: var(--accent-color);
+  border-left: 4px solid var(--accent-color);
+  padding-left: 11px; /* 15px - 4px */
+}
+
+
+/* Media query ko App.css mein move karna behtar hai, 
+   lekin yeh yahaan bhi kaam karega */
+@media (min-width: 993px) { /* MODIFICATION: 600px se 993px kiya */
+  .mobile-nav {
+    display: none;
+  }
+}
+
+/* 992px ke neeche sidebar hide ho jayegi */
+@media (max-width: 992px) {
+    /* Hide the main desktop sidebar */
+    .sidebar {
+        display: none;
+    }
+    /* Fix content padding */
+    .content-wrapper,
+    .content-wrapper.content-shifted {
+        padding-left: 0;
+    }
+}

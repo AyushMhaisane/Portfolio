@@ -1,0 +1,80 @@
+:root {
+    --accent-color: #00ADB5; 	 	
+    --text-light: #EEEEEE; 	 	 
+    --bg-dark-secondary: #393e46; 
+}
+
+.navbar-profile-pic {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 5px; 
+}
+
+.navbar-profile-pic img {
+    border-radius: 50%; 
+    height: 100px; 
+    width: 100px;
+    object-fit: cover;
+    border: 3px solid var(--accent-color); 
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.5); 
+    transition: all 0.3s ease;
+}
+
+.nav-item {
+    font-size: 16px; 
+    margin-top: 15px; 
+}
+
+.nav-link {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link a {
+    display: flex; 
+    align-items: center;
+    padding: 10px 25px; 
+    text-decoration: none;
+    
+    color: var(--text-light); 
+    transition: all 0.3s ease;
+}
+
+.nav-link svg {
+    font-size: 24px;
+    margin-right: 15px; 
+}
+
+.nav-link a:hover {
+    color: var(--accent-color); 
+    background-color: rgba(0, 173, 181, 0.1); 
+}
+
+.nav-link a.active {
+    color: var(--accent-color); 
+    
+    border-left: none; 
+    
+    border-bottom: 3px solid var(--accent-color); 
+    
+    padding-left: 25px; 
+    padding-bottom: 7px; 
+    
+    background-color: var(--bg-dark-secondary);
+}
+
+.sidebar:not(.sidebar-toggle) .nav-link a {
+    justify-content: center; 
+    padding: 10px 0; 
+}
+
+.sidebar:not(.sidebar-toggle) .nav-link a.active {
+    border-bottom: none;
+    border-left: 5px solid var(--accent-color);
+    padding-left: 0;
+}
+
+.sidebar:not(.sidebar-toggle) .nav-link a span {
+    display: none; 
+}

@@ -1,0 +1,75 @@
+:root {
+    --bg-dark-primary: #222831; 	
+    --bg-dark-secondary: #393e46; 
+    --accent-color: #00ADB5; 	 	
+    --text-light: #EEEEEE; 	 	 
+}
+
+.work-exp-container {
+    margin: 50px auto; 
+    width: 90%; 
+    max-width: 1200px;
+    padding: 60px 0;
+    
+    background-color: rgba(128, 128, 128, 0.101); 
+    border-radius: 10px;
+}
+
+#dark .work-exp-container {
+    background-color: var(--bg-dark-primary);
+    color: var(--text-light);
+}
+
+.work-exp-container h2 {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.work-exp-container hr {
+    border-top: 2px solid var(--accent-color);
+    width: 400px;
+    margin: 10px auto 40px auto;
+}
+
+.vertical-timeline-element-content .vertical-timeline-element-title {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.vertical-timeline-element-content .vertical-timeline-element-subtitle {
+    color: var(--text-light); 
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.vertical-timeline-element-content p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+    .work-exp-container {
+        padding: 30px 15px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .work-exp-container hr {
+        width: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    .work-exp-container {
+        margin: 0;
+        padding: 20px 10px;
+        border-radius: 0;
+    }
+    .work-exp-container hr {
+        width: 280px;
+    }
+}
