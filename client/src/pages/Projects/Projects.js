@@ -1,15 +1,33 @@
 import React from 'react';
-import "./Projects.css";
-// import Fade from "react-reveal/Fade"; // MODIFICATION: Hata diya
+// MODIFICATION: CSS import ko theek kiya (Techstack.css se Projects.css)
+import "./Projects.css"; 
+// import Fade from "react-reveal/Fade"; // react-reveal hata diya
+import { motion } from 'framer-motion'; // Framer Motion import
 import portfolioImage from "../../assets/images/portfolio.png"; 
 import project2Image from "../../assets/images/project2.png";
 import project3Image from "../../assets/images/project3.png";
 
-// Define project data to simplify rendering and update placeholder text
+// Framer Motion variants
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: "easeInOut" } 
+  }
+};
+
+// Card variants
+const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+};
+
+
 const projectData = [
     {
         title: "Portfolio Site",
-        stack: ["React", "Node", "Express"],
+        stack: ["React", "Node", "Express", "MongoDB"],
         badge: "MERN Stack",
         link: "https://github.com/AyushMhaisane/portfolio-repo-link",
         image: portfolioImage 
@@ -33,7 +51,14 @@ const projectData = [
 const Projects = () => {
     return (
         <>
-            <div className='container project' id='projects'>
+            <motion.div 
+              className='container project' 
+              id='projects'
+              variants={sectionVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
                 <h2 className='col-12 mt-3 mb-1 text-center text-uppercase'>
                     Recent Projects
                     <hr />
@@ -44,9 +69,14 @@ const Projects = () => {
                 </p>
 
                 <div className="row" id="ads" >
-                    {/* MODIFICATION: <Fade> wrapper hata diya */}
+                    {/* <Fade> wrapper hata diya */}
                     {projectData.map((project, index) => (
-                        <div className='col-md-4' key={index}>
+                        <motion.div 
+                          className='col-md-4' 
+                          key={index}
+                          variants={cardVariants}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                        >
                             <div className='card rounded'>
                                 <div className="card-image">
                                     <span className="card-notify-badge">{project.badge}</span>
@@ -71,10 +101,10 @@ const Projects = () => {
                                     <a className='ad-btn' href={project.link} target="_blank" rel="noopener noreferrer">View Code</a>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

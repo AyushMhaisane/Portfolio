@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import './Contact.css';
 import { BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs"; 
 import mail from '../../assets/images/mail.png'; 
-
-// 'axios' aur 'toast' ko import karein
 import axios from 'axios';
 import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css'; // Isse App.js mein import karein
+import { motion } from 'framer-motion'; // Framer Motion import
+
+// Framer Motion variants
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: "easeInOut" } 
+  }
+};
 
 const Contact = () => {
   const [name, setName] = useState(""); 
@@ -19,9 +27,8 @@ const Contact = () => {
     try {
       if (!name || !email || !msg) {
         toast.error("PLease Provide all fields");
-        return; // Function ko yahaan rokein
+        return; 
       }
-      // '/api/v1/portfolio/sendEmail' endpoint par data POST karein
       const res = await axios.post("/api/v1/portfolio/sendEmail", {
         name,
         email,
@@ -38,13 +45,20 @@ const Contact = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error("Something went wrong"); // User ko error dikhayein
+      toast.error("Something went wrong"); 
     }
   };
 
   return (
     <>
-      <div className="contact" id='contact'> 
+      <motion.div 
+        className="contact" 
+        id='contact'
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      > 
         <h2 className='col-12 mt-3 mb-1 text-center text-uppercase'>
           Contact Us
           <hr />
@@ -67,7 +81,6 @@ const Contact = () => {
             {/* Form Column */}
             <div className=" col-lg-6 col-md-6">
               
-              {/* <form> tag add karein aur onSubmit ko connect karein */}
               <form className="card2 d-flex card border-0 px-4 py-4" onSubmit={handleSubmit}>
                 <h6>
                   Contact With 
@@ -97,7 +110,6 @@ const Contact = () => {
                   />
                 </h6>
                 
-                {/* Form Inputs */}
                 <div className="row px-3">
                   <input 
                     type="text" 
@@ -132,7 +144,6 @@ const Contact = () => {
                   />
                 </div>
                 
-                {/* Submit Button */}
                 <div className="row px-3">
                   <button className='button' type='submit'>Send Message</button>
                 </div>
@@ -140,7 +151,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

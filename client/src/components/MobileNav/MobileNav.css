@@ -1,6 +1,6 @@
 /*
-  MOBILE-NAV.CSS - UPDATED
-  Colors ko naye dark/cyan theme se match kiya gaya hai.
+  MOBILE-NAV.CSS
+  Mobile-first navigation menu.
 */
 :root {
     --bg-dark-primary: #222831;   
@@ -15,12 +15,12 @@
   top: 0;
   width: 100%;
   z-index: 1001; /* Sidebar (1000) ke upar dikhna chahiye */
+  display: none; /* Default hide */
 }
 
 .mobile-nav-header {
   height: 50px;
   width: 100%;
-  /* MODIFICATION: Color ko sidebar jaisa banaya */
   background-color: var(--bg-dark-secondary); 
   padding: 8px 12px;
   display: flex;
@@ -29,14 +29,12 @@
 }
 
 .mobile-nav-header .mobile-nav-icon {
-  /* MODIFICATION: Color ko light text banaya */
   color: var(--text-light);
   cursor: pointer;
 }
 
 .mobile-nav-title {
   margin-left: 20px;
-  /* MODIFICATION: Color ko accent banaya */
   color: var(--accent-color); 
   font-weight: bold;
   text-transform: capitalize;
@@ -46,16 +44,13 @@
 
 .mobile-nav-menu .nav-items {
   height: auto;
-  width: 100%; /* MODIFICATION: 200px se 100% kiya */
-  /* MODIFICATION: Color ko sidebar jaisa banaya */
+  width: 100%; 
   background-color: var(--bg-dark-secondary); 
   padding: 10px;
   padding-bottom: 20px;
-  /* MODIFICATION: Top ki radius hata di */
-  /* border-bottom-right-radius: 10px; */
 }
 
-/* MODIFICATION: Link styling add ki (Menus.css jaisi) */
+/* Link styling (Menus.css jaisi) */
 .mobile-nav-menu .nav-link a {
   display: flex;
   align-items: center;
@@ -84,23 +79,9 @@
 }
 
 
-/* Media query ko App.css mein move karna behtar hai, 
-   lekin yeh yahaan bhi kaam karega */
-@media (min-width: 993px) { /* MODIFICATION: 600px se 993px kiya */
-  .mobile-nav {
-    display: none;
-  }
-}
-
-/* 992px ke neeche sidebar hide ho jayegi */
+/* MODIFICATION: 992px par show karein */
 @media (max-width: 992px) {
-    /* Hide the main desktop sidebar */
-    .sidebar {
-        display: none;
-    }
-    /* Fix content padding */
-    .content-wrapper,
-    .content-wrapper.content-shifted {
-        padding-left: 0;
-    }
+  .mobile-nav {
+    display: block;
+  }
 }

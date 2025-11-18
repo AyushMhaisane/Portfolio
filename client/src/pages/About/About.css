@@ -1,18 +1,27 @@
+/*
+  ABOUT.CSS - UPDATED
+  Image responsiveness fix add kiya.
+*/
+
+/* -------------------------------------- */
+/* 1. CSS VARIABLES (Defined in Layout.css) */
+/* -------------------------------------- */
 :root {
-    --bg-dark-primary: #222831; 	
-    --text-light: #EEEEEE; 	 	 
-    --accent-color: #00ADB5; 	 	
+    --bg-dark-primary: #222831;   
+    --text-light: #EEEEEE;       
+    --accent-color: #00ADB5;     
     --shadow-color: rgba(0, 0, 0, 0.4); 
-    --bg-dark-secondary: #393e46; 
+    --bg-dark-secondary: #393e46; /* Card background color */
 }
 
+/* -------------------------------------- */
+/* 2. BASE ABOUT SECTION STYLES */
+/* -------------------------------------- */
 .about {
-    margin: 40px auto; 	
-    max-width: 1200px; 	
-    width: 90%; 	 	 
-    
+    margin: 40px auto;  
+    max-width: 1200px;  
+    width: 90%;         
     padding: 40px 20px; 
-    
     border-radius: 8px; 
     color: #393e46; 
 }
@@ -37,13 +46,24 @@
     margin-bottom: 15px; 
 }
 
+/* MODIFICATION: Naya class .about-profile-img add kiya
+  Yeh aapki image ko responsive banayega
+*/
+.about-profile-img {
+    width: 100%; /* Image ko responsive banaya */
+    max-width: 450px; /* Max size set ki */
+    height: auto; /* Height ko auto kiya */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 173, 181, 0.4); /* Glow */
+}
+
+
 .image-caption-name {
-    color: var(--accent-color); 
-    font-size: 1.5rem; 
-    font-weight: 600;
-    margin-top: 15px; 
-    
-    text-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
+  color: var(--accent-color); 
+  font-size: 1.5rem; 
+  font-weight: 600;
+  margin-top: 15px; 
+  text-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
 }
 
 
@@ -61,6 +81,9 @@
     line-height: 1.6;
 }
 
+/* -------------------------------------- */
+/* HIGHLIGHTS SECTION STYLES */
+/* -------------------------------------- */
 .about-highlights {
     display: flex;
     flex-wrap: wrap; 
@@ -105,15 +128,26 @@
     font-weight: 600;
 }
 
+
+/* -------------------------------------- */
+/* 3. DARK MODE STYLES */
+/* -------------------------------------- */
+
 #dark .about {
     background-color: rgba(255, 255, 255, 0.05); 
     color: var(--text-light); 
 }
 
+
+/* If the background image needs specific styling in dark mode */
 #dark .about-img img {
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 173, 181, 0.4); 
 }
+
+/* -------------------------------------- */
+/* 4. MEDIA QUERY (Responsiveness) */
+/* -------------------------------------- */
 
 @media (max-width: 992px) {
     .about {
@@ -124,6 +158,12 @@
 
     .about-img {
         margin-bottom: 20px;
+    }
+    
+    /* MODIFICATION: Responsive image ke liye rule add kiya
+    */
+    .about-profile-img {
+        max-width: 300px; /* Mobile par image thodi chhoti */
     }
 
     .about-content {

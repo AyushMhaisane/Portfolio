@@ -7,6 +7,17 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { MdWork } from "react-icons/md";
 import { SiReact } from "react-icons/si";
+import { motion } from 'framer-motion'; // Framer Motion import
+
+// Framer Motion variants
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: "easeInOut" } 
+  }
+};
 
 const WorkExp = () => {
     // Define the style constants for consistency
@@ -16,30 +27,32 @@ const WorkExp = () => {
     
     return (
         <>
-            {/* Renamed class to be semantic and applied id='dark' to trigger dark CSS */}
-            <div className="work-exp-container" id="work"> 
+            <motion.div 
+              className="work-exp-container" 
+              id="work"
+              variants={sectionVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            > 
                 <div className="container">
                     <h2 className="col-12 mt-3 mb-1 text-center text-uppercase">
                         Work Experience
                     </h2>
                     <hr />
-                    {/* Updated timeline line color to accent color */}
                     <VerticalTimeline lineColor={accentColor}> 
 
                         {/* Internship at Compilers Technologies */}
                         <VerticalTimelineElement
                             className="vertical-timeline-element--work"
-                            // Card Background, Text, and Shadow
                             contentStyle={{ 
                                 background: darkBackground, 
                                 color: lightText,
                                 boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
                                 borderRadius: "8px"
                             }}
-                            // Arrow must match the card background
                             contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
                             date="19th June 2023 – 31st July 2023"
-                            // Icon Background is Accent, Icon Color is Light Text
                             iconStyle={{ background: accentColor, color: lightText }}
                             icon={<MdWork />}
                         >
@@ -60,17 +73,14 @@ const WorkExp = () => {
                         {/* Seeking Internship Entry (React/Full Stack focus) */}
                         <VerticalTimelineElement
                             className="vertical-timeline-element--work"
-                            // Card Background, Text, and Shadow
                             contentStyle={{ 
                                 background: darkBackground, 
                                 color: lightText,
                                 boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
                                 borderRadius: "8px"
                             }}
-                            // Arrow must match the card background
                             contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
-                            date="2025 - Present"
-                            // Icon Background is Secondary Dark, Icon Color is Accent (for contrast with white icon background)
+                            date="2024 - Present"
                             iconStyle={{ background: darkBackground, color: accentColor }}
                             icon={<SiReact />}
                         >
@@ -88,7 +98,7 @@ const WorkExp = () => {
 
                     </VerticalTimeline>
                 </div>
-            </div>
+            </motion.div>
         </>
     );
 };

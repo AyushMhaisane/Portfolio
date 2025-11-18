@@ -1,16 +1,31 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import Resume from "../../assets/docs/resume.pdf";
-// MODIFICATION: CSS import ko theek kiya (About.css se Home.css)
-import "./Home.css"; 
-// import Fade from "react-reveal/Fade"; // Removed
+import "./Home.css";
+import { motion } from 'framer-motion'; // Framer Motion import
+
+// Framer Motion variants
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: "easeInOut" } 
+  }
+};
 
 const Home = () => {
   return (
-    <div className="home-container" id="home">
+    <motion.div 
+      className="home-container" 
+      id="home"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="home-content">
         
-        {/* <Fade right> wrapper removed */}
         <h2>Hi 👋 I'm a</h2>
         <h1>
           <Typewriter
@@ -26,11 +41,10 @@ const Home = () => {
           />
         </h1>
         
-        {/* <Fade bottom> wrapper removed */}
         <div className="home-buttons">
           <a
             className="btn btn-hire"
-            href="https://api.whatsapp.com/send?phone=1234567890"
+            href="https://api.whatsapp.com/send?phone=7218558993"
             rel="noreferrer"
             target="_blank"
           >
@@ -42,7 +56,7 @@ const Home = () => {
         </div>
 
       </div>
-    </div>
+    </motion.div>
   );
 };
 

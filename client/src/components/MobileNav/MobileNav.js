@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { Link } from "react-scroll";
-// MODIFICATION: 'react-icons/fc' ko 'react-icons/md' se replace kiya
 import {
   MdHome,
   MdPerson,
@@ -44,7 +43,6 @@ const MobileNav = () => {
             />
           )}
 
-          {/* MODIFICATION: Title ko aapke naam se update kiya */}
           <span className="mobile-nav-title">Ayush Mhaisane</span>
         </div>
         {open && (

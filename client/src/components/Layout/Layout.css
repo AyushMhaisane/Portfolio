@@ -1,16 +1,30 @@
+/*
+  LAYOUT.CSS - UPDATED
+  Breakpoint ko 600px se 992px kar diya gaya hai.
+*/
+
+/* -------------------------------------- */
+/* 1. CSS VARIABLES (Best Practice) */
+/* -------------------------------------- */
 :root {
-    --bg-dark-primary: #222831; 	
-    --bg-dark-secondary: #393e46; 
-    --accent-color: #00ADB5; 	 	
-    --text-light: #EEEEEE; 	 	 
+    --bg-dark-primary: #222831;   /* Main Page Background */
+    --bg-dark-secondary: #393e46; /* Sidebar/Card Background */
+    --accent-color: #00ADB5;     /* Toggle Button/Highlight */
+    --text-light: #EEEEEE;       /* Text Color */
 }
 
 
+/* -------------------------------------- */
+/* 2. MAIN LAYOUT STYLES */
+/* -------------------------------------- */
 .sidebar-section {
     display: flex;
     background-color: var(--bg-dark-primary); 
 }
 
+/* -------------------------------------- */
+/* 3. SIDEBAR STYLES */
+/* -------------------------------------- */
 .sidebar {
     height: 100vh;
     background-color: var(--bg-dark-secondary); 
@@ -25,6 +39,9 @@
     width: 200px;
 }
 
+/* -------------------------------------- */
+/* 4. TOGGLE ICON STYLES */
+/* -------------------------------------- */
 .sidebar-toggle-icons {
     display: flex;
     justify-content: flex-end; 
@@ -46,8 +63,11 @@
     transform: scale(1.05);
 }
 
-@media (max-width: 600px) {
+
+
+@media (max-width: 992px) {
     .sidebar {
+        /* Desktop sidebar ko 992px par hide karein */
         display: none; 
     }
 }

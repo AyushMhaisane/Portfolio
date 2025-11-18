@@ -1,15 +1,32 @@
 import React from 'react';
 import './About.css';
+// import Jump from "react-reveal/Jump"; // react-reveal hata diya
+import { motion } from 'framer-motion'; // Framer Motion import
 import { MdWork, MdSchool, MdLocationOn } from "react-icons/md";
 import image from '../../assets/images/img.png';
-// import Jump from "react-reveal/Jump"; // MODIFICATION: Hata diya
-// import Fade from "react-reveal/Fade"; // MODIFICATION: Hata diya
+
+// Framer Motion variants
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: "easeInOut" } 
+  }
+};
 
 const About = () => {
   return (
     <>
-      {/* MODIFICATION: <Jump> wrapper hata diya */}
-      <div className="about" id='dark'>
+      {/* <Jump> ko <motion.div> se replace kiya */}
+      <motion.div 
+        className="about" 
+        id='dark'
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         
         <h2 className='col-12 mt-3 mb-1 text-center text-uppercase'>
           About Me
@@ -17,19 +34,25 @@ const About = () => {
         <hr className="about-hr" /> 
 
         <div className="row">
-          {/* MODIFICATION: <Fade> wrapper hata diya */}
+          {/* <Fade> wrapper hata diya */}
           <div className="col-md-6 col-xl-6 col-lg-6 col-xs-12 about-img">
-            <img src={image} alt="ABOUT PROFILE" height="450" />
+            
+            {/* MODIFICATION: 
+              - Fixed height="450" hata diya
+              - className="about-profile-img" add kiya
+            */}
+            <img src={image} alt="ABOUT PROFILE" className="about-profile-img" />
+            
             <h4 className="image-caption-name">
               Ayush Mhaisane
             </h4>
           </div>
           
-          {/* MODIFICATION: <Fade> wrapper hata diya */}
+          {/* <Fade> wrapper hata diya */}
           <div className="col-md-6 col-xl-6 col-lg-6 col-xs-12 about-content">
             
             <p>
-              As a passionate Third Year IT Engineering student, I excel at architecting and building end-to-end web applications**—from robust backend APIs to pixel-perfect, user-centric UIs.
+              As a passionate Third Year IT Engineering student, I excel at architecting and building end-to-end web applications—from robust backend APIs to pixel-perfect, user-centric UIs.
               <br/><br/>
               I thrive on transforming complex challenges into scalable, functional products by blending technical precision with creative problem-solving. Driven by a growth mindset, I am always seeking new opportunities to learn, collaborate, and innovate.
             </p>
@@ -60,7 +83,7 @@ const About = () => {
 
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
