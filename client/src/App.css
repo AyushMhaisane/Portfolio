@@ -1,20 +1,10 @@
-/* APP.CSS - UPDATED
-  content-wrapper ke mobile breakpoint ko 992px kiya.
-*/
 
-/* -------------------------------------- */
-/* 1. CSS VARIABLES (Global Reference) */
-/* -------------------------------------- */
 :root {
     --bg-dark-primary: #222831;   
     --bg-dark-secondary: #393e46; 
     --accent-color: #00ADB5;     
     --text-light: #EEEEEE;       
 }
-
-/* -------------------------------------- */
-/* 2. BODY/GLOBAL STYLES */
-/* -------------------------------------- */
 
 body {
     font-family: 'Inter', sans-serif;
@@ -49,9 +39,6 @@ body {
 }
 
 
-/* -------------------------------------- */
-/* 3. FOOTER STYLES */
-/* -------------------------------------- */
 
 .footer {
     padding: 20px 0;
@@ -71,11 +58,6 @@ body {
     color: var(--accent-color); 
 }
 
-
-/* -------------------------------------- */
-/* 4. SCROLL-TO-TOP BUTTON OVERRIDE */
-/* -------------------------------------- */
-
 #dark .react-scroll-to-top-parent {
     background-color: var(--accent-color) !important; 
     border-radius: 50% !important;
@@ -85,7 +67,6 @@ body {
     color: var(--bg-dark-secondary) !important; 
 }
 
-/* MODIFICATION: Breakpoint ko 600px se 992px kiya */
 @media (max-width: 992px) {
     .footer {
         margin-left: 0 !important; 
