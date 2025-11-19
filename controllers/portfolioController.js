@@ -32,7 +32,6 @@ const sendEmailController = async (req, res) => {
       to: "ayushmhaisane25@gmail.com", 
       from: "ayushmhaisane25@gmail.com", 
       subject: `Portfolio Contact from ${name}`,
-      // ... aapke sendEmailController function ke andar ...
 
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; background-color: #222831; padding: 20px;">
@@ -89,7 +88,6 @@ const sendEmailController = async (req, res) => {
 
     });
 
-    // MODIFICATION: Yeh response ab email send hone ke BAAD hi bhejega
     return res.status(200).send({
       success: true,
       message: "Your Message Send Successfully",
