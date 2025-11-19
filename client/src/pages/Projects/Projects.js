@@ -1,13 +1,10 @@
 import React from 'react';
-// MODIFICATION: CSS import ko theek kiya (Techstack.css se Projects.css)
 import "./Projects.css"; 
-// import Fade from "react-reveal/Fade"; // react-reveal hata diya
-import { motion } from 'framer-motion'; // Framer Motion import
+import { motion } from 'framer-motion'; 
 import portfolioImage from "../../assets/images/portfolio.png"; 
 import project2Image from "../../assets/images/project2.png";
 import project3Image from "../../assets/images/project3.png";
 
-// Framer Motion variants
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { 
@@ -69,7 +66,6 @@ const Projects = () => {
                 </p>
 
                 <div className="row" id="ads" >
-                    {/* <Fade> wrapper hata diya */}
                     {projectData.map((project, index) => (
                         <motion.div 
                           className='col-md-4' 
