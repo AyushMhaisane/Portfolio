@@ -1,10 +1,8 @@
 import React from 'react';
 import './Techstack.css';
 import { techstackList } from '../../utils/TechstackList'; 
-// import RubberBand from "react-reveal/RubberBand"; // react-reveal hata diya
-import { motion } from 'framer-motion'; // Framer Motion import
+import { motion } from 'framer-motion'; 
 
-// Framer Motion variants
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { 
@@ -14,7 +12,6 @@ const sectionVariants = {
   }
 };
 
-// Card variants
 const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
@@ -31,7 +28,6 @@ const Techstack = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-                {/* <RubberBand> wrapper hata diya */}
                 <h2 className='col-12 mt-3 mb-1 text-center text-uppercase'>Technologies Stack</h2>
                 <hr></hr>
                 <p className='pb-3 text-center techstack-subtitle'>
@@ -40,12 +36,10 @@ const Techstack = () => {
                 
                 <div className="row">
                     {techstackList.map((tech, index) => (
-                        // <Fade> wrapper hata diya
                         <motion.div 
                           className='col-md-3' 
                           key={tech._id}
                           variants={cardVariants}
-                          // Stagger children effect
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                         >
                             <div className="card m-2">
