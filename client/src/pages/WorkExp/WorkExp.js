@@ -7,9 +7,9 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { MdWork } from "react-icons/md";
 import { SiReact } from "react-icons/si";
-import { motion } from 'framer-motion'; // Framer Motion import
+import { motion } from 'framer-motion'; 
 
-// Framer Motion variants
+
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { 
@@ -20,10 +20,10 @@ const sectionVariants = {
 };
 
 const WorkExp = () => {
-    // Define the style constants for consistency
-    const darkBackground = "#393e46"; // Secondary Dark BG (Card)
-    const accentColor = "#00ADB5";   // Bright Cyan Accent
-    const lightText = "#EEEEEE";     // Light Text Color
+    
+    const darkBackground = "#393e46"; 
+    const accentColor = "#00ADB5";   
+    const lightText = "#EEEEEE";     
     
     return (
         <>
@@ -42,7 +42,7 @@ const WorkExp = () => {
                     <hr />
                     <VerticalTimeline lineColor={accentColor}> 
 
-                        {/* Internship at Compilers Technologies */}
+                       
                         <VerticalTimelineElement
                             className="vertical-timeline-element--work"
                             contentStyle={{ 
@@ -70,7 +70,7 @@ const WorkExp = () => {
 
                         </VerticalTimelineElement>
 
-                        {/* Seeking Internship Entry (React/Full Stack focus) */}
+                       
                         <VerticalTimelineElement
                             className="vertical-timeline-element--work"
                             contentStyle={{ 
