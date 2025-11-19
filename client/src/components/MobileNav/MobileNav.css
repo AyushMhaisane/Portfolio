@@ -1,7 +1,4 @@
-/*
-  MOBILE-NAV.CSS
-  Mobile-first navigation menu.
-*/
+
 :root {
     --bg-dark-primary: #222831;   
     --bg-dark-secondary: #393e46; 
@@ -14,8 +11,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1001; /* Sidebar (1000) ke upar dikhna chahiye */
-  display: none; /* Default hide */
+  z-index: 1001; 
+  display: none; 
 }
 
 .mobile-nav-header {
@@ -50,7 +47,6 @@
   padding-bottom: 20px;
 }
 
-/* Link styling (Menus.css jaisi) */
 .mobile-nav-menu .nav-link a {
   display: flex;
   align-items: center;
@@ -71,7 +67,6 @@
   background-color: rgba(0, 173, 181, 0.1);
 }
 
-/* Active link ke liye */
 .mobile-nav-menu .nav-link a.active {
   color: var(--accent-color);
   border-left: 4px solid var(--accent-color);
@@ -79,7 +74,6 @@
 }
 
 
-/* MODIFICATION: 992px par show karein */
 @media (max-width: 992px) {
   .mobile-nav {
     display: block;
