@@ -12,8 +12,7 @@ import {
 
 import PassportPhoto from '../../assets/images/profile.jpeg';
 import { Link } from 'react-scroll';
-// import Zoom from "react-reveal/Zoom"; // Removed
-// import Fade from "react-reveal/Fade"; // Removed
+
 
 const menuItems = [
     { name: "Home", target: "home", icon: MdHome, offset: -10 },
@@ -53,12 +52,10 @@ const Menus = (props) => {
         <>
             {props.toggle ? (
                 <>
-                    {/* <Zoom> wrapper removed */}
                     <div className='navbar-profile-pic'>
                         <img src={PassportPhoto} alt="Profile" />
                     </div>
                     
-                    {/* <Fade> wrapper removed */}
                     <div className='nav-items'>
                         <div className='nav-item'>
                             {menuItems.map((item) => (
@@ -82,5 +79,4 @@ const Menus = (props) => {
     );
 };
 
-// MODIFICATION: Typo theek kiya (MenPos se Menus)
 export default Menus;
