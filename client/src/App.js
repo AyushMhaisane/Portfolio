@@ -10,10 +10,8 @@ import Projects from "./pages/Projects/Projects";
 import Techstack from "./pages/Techstack/Techstack";
 import WorkExp from "./pages/WorkExp/WorkExp";
 import ScrollToTop from "react-scroll-to-top";
-// import Tada from "react-reveal/Tada"; // MODIFICATION: react-reveal hata diya
 import './App.css'; 
 
-// MODIFICATION: MobileNav component import kiya
 import MobileNav from "./components/MobileNav/MobileNav";
 
 function App() {
@@ -29,7 +27,6 @@ function App() {
     <div id="dark"> 
       <ToastContainer /> 
       
-      {/* MODIFICATION: MobileNav component render kiya */}
       <MobileNav />
 
       <Layout toggle={toggle} handleToggle={handleToggle} />
@@ -45,7 +42,6 @@ function App() {
       </div>
 
       <div className="footer">
-        {/* MODIFICATION: <Tada> wrapper hata diya */}
         <h4 className="col-md 5 text-center">Made with ❤️ <strong>Ayush Mhaisane</strong> &copy; 2025</h4>
       </div>
       
