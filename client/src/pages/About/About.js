@@ -1,7 +1,6 @@
 import React from 'react';
 import './About.css';
-// import Jump from "react-reveal/Jump"; // react-reveal hata diya
-import { motion } from 'framer-motion'; // Framer Motion import
+import { motion } from 'framer-motion'; 
 import { MdWork, MdSchool, MdLocationOn } from "react-icons/md";
 import image from '../../assets/images/img.png';
 
@@ -18,7 +17,6 @@ const sectionVariants = {
 const About = () => {
   return (
     <>
-      {/* <Jump> ko <motion.div> se replace kiya */}
       <motion.div 
         className="about" 
         id='dark'
@@ -34,13 +32,9 @@ const About = () => {
         <hr className="about-hr" /> 
 
         <div className="row">
-          {/* <Fade> wrapper hata diya */}
           <div className="col-md-6 col-xl-6 col-lg-6 col-xs-12 about-img">
             
-            {/* MODIFICATION: 
-              - Fixed height="450" hata diya
-              - className="about-profile-img" add kiya
-            */}
+           
             <img src={image} alt="ABOUT PROFILE" className="about-profile-img" />
             
             <h4 className="image-caption-name">
@@ -48,7 +42,6 @@ const About = () => {
             </h4>
           </div>
           
-          {/* <Fade> wrapper hata diya */}
           <div className="col-md-6 col-xl-6 col-lg-6 col-xs-12 about-content">
             
             <p>
