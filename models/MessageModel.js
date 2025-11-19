@@ -14,7 +14,7 @@ const messageSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Message is required'],
   },
-}, { timestamps: true }); // 'timestamps: true' automatically 'createdAt' aur 'updatedAt' add kar dega
+}, { timestamps: true }); 
 
 // Model Banayein
 const MessageModel = mongoose.model('Message', messageSchema);
