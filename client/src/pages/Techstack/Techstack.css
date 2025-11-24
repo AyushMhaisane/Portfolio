@@ -1,0 +1,97 @@
+:root {
+    --bg-dark-primary: #222831; 	
+    --bg-dark-secondary: #393e46; 
+    --accent-color: #00ADB5; 	 	
+    --text-light: #EEEEEE; 	 	 
+    --shadow-color-hover: rgba(0, 173, 181, 0.6); 
+}
+
+.techstack {
+    margin: 60px auto; 
+    max-width: 1200px; 
+    width: 90%; 	 	
+    
+    padding-bottom: 80px;
+}
+
+#dark .techstack {
+    background-color: var(--bg-dark-primary);
+    color: var(--text-light); 
+}
+
+.techstack hr {
+    border-top: 2px solid var(--accent-color); 
+    width: 400px;
+    margin: 10px auto;
+}
+
+.techstack h2 {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.techstack .techstack-subtitle {
+    color: #a8a8a8; 
+    font-size: 1.1rem;
+}
+
+.techstack .row {
+    justify-content: center;
+}
+
+.techstack .card {
+    cursor: pointer;
+    background-color: var(--bg-dark-secondary);
+    color: var(--text-light);
+    
+    border: 1px solid #4a515c; 
+    
+    border-radius: 8px;
+    transition: all 500ms ease;
+    min-height: 80px;
+}
+
+.techstack .tech-icon {
+    font-size: 2.5rem; 
+    margin-right: 15px;
+    color: var(--accent-color); 
+}
+
+.techstack .card-body h5 {
+    color: var(--text-light); 
+    font-weight: 600;
+}
+
+.techstack .card:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-dark-secondary);
+    border: 1px solid var(--accent-color); 
+    
+    box-shadow: 0px 0px 20px 0px var(--shadow-color-hover);
+    transform: translateY(-5px);
+}
+
+.techstack .card:hover .tech-icon {
+    color: var(--bg-dark-secondary);
+}
+.techstack .card:hover .card-body h5 {
+    color: var(--bg-dark-secondary);
+}
+
+@media (max-width: 992px) {
+    .techstack {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .techstack {
+        margin-top: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .techstack hr {
+        width: 300px;
+    }
+}
