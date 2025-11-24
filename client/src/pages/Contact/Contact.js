@@ -6,7 +6,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 
-// 🌐 YOUR BACKEND URL HERE
 const API_BASE_URL = "https://my-portfolio-backend-2kls.onrender.com";
 
 // Framer Motion variants
@@ -24,21 +23,20 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
 
-  //handle submit button
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       if (!name || !email || !msg) {
-        toast.error("Please Provide all fields");
+        toast.error("Please provide all fields");
         return; 
       }
 
-      // 🚀 UPDATE: Now calling Render backend
-      const res = await axios.post(`${API_BASE_URL}/api/v1/portfolio/sendEmail`, {
-        name,
-        email,
-        msg,
-      });
+      // 🚀 FULL FIX — clean URL
+      const res = await axios.post(
+        `${API_BASE_URL}/api/v1/portfolio/sendEmail`,
+        { name, email, msg }
+      );
 
       if (res.data.success) {
         toast.success(res.data.message);
@@ -49,8 +47,8 @@ const Contact = () => {
         toast.error(res.data.message);
       }
     } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong"); 
+      console.log("Axios error:", error);
+      toast.error("Something went wrong. Check backend logs.");
     }
   };
 
@@ -68,10 +66,11 @@ const Contact = () => {
           Contact Us
           <hr />
         </h2>
+
         <div className="card card0 border-0">
           <div className="row">
 
-            {/* Image Column */}
+            {/* LEFT IMAGE */}
             <div className="col-md-6 col-lg-6 col-xk-6 col-sm-12">
               <div className="card1">
                 <div className="row border-line">
@@ -84,12 +83,11 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Form Column */}
+            {/* RIGHT FORM */}
             <div className="col-lg-6 col-md-6">
-              
               <form className="card2 d-flex card border-0 px-4 py-4" onSubmit={handleSubmit}>
                 <h6>
-                  Contact With 
+                  Contact with 
                   <BsLinkedin
                     color="#0077B5" 
                     size={25}
@@ -112,45 +110,51 @@ const Contact = () => {
                 
                 <div className="row px-3">
                   <input 
-                    type="text" 
-                    placeholder='Enter Your Name' 
-                    className='mb-3' 
+                    type="text"
+                    placeholder='Enter Your Name'
+                    className='mb-3'
                     value={name}
-                    onChange={(e) => setName(e.target.value)} 
+                    onChange={(e) => setName(e.target.value)}
                     required
                   />
                 </div>
+
                 <div className="row px-3">
                   <input 
-                    type="email" 
-                    placeholder='Enter Your Email Address' 
-                    className='mb-3' 
+                    type="email"
+                    placeholder='Enter Your Email Address'
+                    className='mb-3'
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
                 </div>
+
                 <div className="row px-3">
                   <textarea 
-                    placeholder='Write Your Message' 
-                    className='mb-3' 
+                    placeholder='Write Your Message'
+                    className='mb-3'
                     value={msg}
                     onChange={(e) => setMsg(e.target.value)}
                     required
                   />
                 </div>
-                
+
                 <div className="row px-3">
-                  <button className='button' type='submit'>Send Message</button>
+                  <button className='button' type='submit'>
+                    Send Message
+                  </button>
                 </div>
-              </form> 
+
+              </form>
             </div>
 
           </div>
         </div>
+
       </motion.div>
     </>
   );
-}
+};
 
 export default Contact;
