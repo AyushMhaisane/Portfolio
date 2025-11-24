@@ -4,7 +4,10 @@ import { BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
 import mail from '../../assets/images/mail.png'; 
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { motion } from 'framer-motion'; // Framer Motion import
+import { motion } from 'framer-motion';
+
+// 🌐 YOUR BACKEND URL HERE
+const API_BASE_URL = "https://my-portfolio-backend-2kls.onrender.com";
 
 // Framer Motion variants
 const sectionVariants = {
@@ -26,15 +29,17 @@ const Contact = () => {
     e.preventDefault();
     try {
       if (!name || !email || !msg) {
-        toast.error("PLease Provide all fields");
+        toast.error("Please Provide all fields");
         return; 
       }
-      const res = await axios.post("/api/v1/portfolio/sendEmail", {
+
+      // 🚀 UPDATE: Now calling Render backend
+      const res = await axios.post(`${API_BASE_URL}/api/v1/portfolio/sendEmail`, {
         name,
         email,
         msg,
       });
-      //validation success
+
       if (res.data.success) {
         toast.success(res.data.message);
         setName(""); 
@@ -65,6 +70,7 @@ const Contact = () => {
         </h2>
         <div className="card card0 border-0">
           <div className="row">
+
             {/* Image Column */}
             <div className="col-md-6 col-lg-6 col-xk-6 col-sm-12">
               <div className="card1">
@@ -79,7 +85,7 @@ const Contact = () => {
             </div>
 
             {/* Form Column */}
-            <div className=" col-lg-6 col-md-6">
+            <div className="col-lg-6 col-md-6">
               
               <form className="card2 d-flex card border-0 px-4 py-4" onSubmit={handleSubmit}>
                 <h6>
@@ -88,32 +94,25 @@ const Contact = () => {
                     color="#0077B5" 
                     size={25}
                     className="ms-2 icon-link"
-                    onClick={() => {
-                      window.open("https://www.linkedin.com/in/ayush-mhaisane-858038304");
-                    }}
+                    onClick={() => window.open("https://www.linkedin.com/in/ayush-mhaisane-858038304")}
                   />
                   <BsGithub
                     color="#EEEEEE" 
                     size={28}
                     className="ms-2 icon-link"
-                    onClick={() => {
-                      window.open("https://github.com/AyushMhaisane");
-                    }}
+                    onClick={() => window.open("https://github.com/AyushMhaisane")}
                   />
                   <BsInstagram
                     color="#E1306C" 
                     size={28}
                     className="ms-2 icon-link"
-                    onClick={() => {
-                      window.open("https://www.instagram.com/ayush_mhaisane/");
-                    }}
+                    onClick={() => window.open("https://www.instagram.com/ayush_mhaisane/")}
                   />
                 </h6>
                 
                 <div className="row px-3">
                   <input 
                     type="text" 
-                    name='name' 
                     placeholder='Enter Your Name' 
                     className='mb-3' 
                     value={name}
@@ -124,8 +123,7 @@ const Contact = () => {
                 <div className="row px-3">
                   <input 
                     type="email" 
-                    name='email' 
-                    placeholder='Enter Your EMail Address' 
+                    placeholder='Enter Your Email Address' 
                     className='mb-3' 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -134,8 +132,6 @@ const Contact = () => {
                 </div>
                 <div className="row px-3">
                   <textarea 
-                    type="text" 
-                    name='msg' 
                     placeholder='Write Your Message' 
                     className='mb-3' 
                     value={msg}
@@ -149,6 +145,7 @@ const Contact = () => {
                 </div>
               </form> 
             </div>
+
           </div>
         </div>
       </motion.div>
