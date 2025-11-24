@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 
 // 🌐 YOUR BACKEND URL HERE
-const API_BASE_URL = "https://my-portfolio-backend-2kls.onrender.com/";
+const API_BASE_URL = "https://my-portfolio-backend-2kls.onrender.com";
 
 // Framer Motion variants
 const sectionVariants = {
